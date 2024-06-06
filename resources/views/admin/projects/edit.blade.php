@@ -42,12 +42,12 @@
         <label for="description" class="form-label lightbrown fw-bold">Description</label>
         <textarea name="description" id="" cols="30" rows="10" class="form-control f-d-bg-form @error('description') description.min|max @enderror">{{ old('description', $project->description)}}</textarea>
     </div>
-    <div class="mb-3">
+    <!-- <div class="mb-3">
         <label for="technologies_used" class="form-label lightbrown fw-bold">Technologies</label>
         <div class="input-group">
             <input type="text" class="form-control f-d-bg-form @error('technologies_used') technologies_used.max @enderror" name="technologies_used" value="{{old('technologies_used', $project->technologies_used )}}" aria-describedby="basic-addon3 basic-addon4">
         </div>
-    </div>
+    </div> -->
     <div class="mb-3">
         <label for="start_date" class="form-label lightbrown fw-bold">Start Date</label>
         <div class="input-group">

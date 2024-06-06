@@ -24,7 +24,6 @@ class UpdateProjectRequest extends FormRequest
         return [
             'title' => 'required|max:255',
             'description' => 'nullable|min:5|max:255',
-            'technologies_used' => 'nullable|max:255',
             'start_date' => 'nullable|date',
             'end_date' => 'nullable|date|after:start_date',
             'url' => 'nullable|url',

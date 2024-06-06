@@ -28,12 +28,12 @@
         <p class="green fw-bold">
             {{ $project->description }}
         </p>
-        <p class="lightbrown fs-4 fw-bold">
+        <!-- <p class="lightbrown fs-4 fw-bold">
             Used Technologies
         </p>
         <p class="green fw-bold">
             {{ $project->technologies_used }}
-        </p>
+        </p> -->
         <p class="lightbrown fs-4 fw-bold">
             Url of the project
         </p>
