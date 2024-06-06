@@ -133,9 +133,9 @@
         <p class="green fs-4 fw-bold">
             Data
         </p>
-        <a href="#" class="d-flex justify-content-start align-items-center">
+        <a href="{{ route('admin.types.index') }}" class="d-flex justify-content-start align-items-center">
             <i class="fs-5 fa-solid fa-book"></i>
-            Documentation
+            Types
         </a>
         <a href="#" class="d-flex justify-content-start align-items-center">
             <i class="fs-5 fa-solid fa-chart-line"></i>

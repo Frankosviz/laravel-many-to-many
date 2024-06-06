@@ -89,6 +89,7 @@ class ProjectController extends Controller
     public function update(UpdateProjectRequest $request, Project $project)
     {
         $form_data= $request->all();
+        $form_data['user_id'] = Auth::id();
         if ($project->title !== $form_data['title']) {
             $form_data['slug'] = Project::generateSlug($form_data['title']);     
         }
@@ -97,9 +98,9 @@ class ProjectController extends Controller
             if ($project->image_path) {
                 Storage::delete($project->image_path);
             }
-
-            $img_path = Storage::put('project_image', $request->image_path);
-            $form_data['image_path'] = $img_path;
+            $name = $request->file('image_path')->getClientOriginalName();
+            $path = Storage::putFileAs('project_image', $request->image_path, $name);
+            $form_data['image_path'] = $path;
         }
 
         $form_data = $request->validated();

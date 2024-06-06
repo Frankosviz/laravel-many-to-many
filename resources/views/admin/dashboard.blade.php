@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    <h1 class="green text-uppercase">Good Morning, <strong class="gradientColor">{{ Auth::user()->name }}</strong></h1>
+<h1 class="green text-uppercase">Good Morning, <strong class="gradientColor">{{ Auth::user()->name }}</strong></h1>
 @endsection
 
 @section('content')
@@ -17,8 +17,9 @@
                     <th class="text-center fw-bold gradientColor fs-4">Start-Date</th>
                     <th class="text-center fw-bold gradientColor fs-4">Status</th>
                     <th class="text-center fw-bold gradientColor fs-4">Detail</th>
-                    <th class="text-center fw-bold gradientColor fs-4"><a class="f-d-button" href="{{ route('admin.projects.create') }}"><i class="fa-solid fa-plus"></i></th></a>
-                    
+                    <th class="text-center fw-bold gradientColor fs-4"><a class="f-d-button"
+                            href="{{ route('admin.projects.create') }}"><i class="fa-solid fa-plus"></i></th></a>
+
                 </tr>
                 @foreach ($projects as $project)
                     <tr>
@@ -33,7 +34,7 @@
                             </a>
                         </td>
                         <td>
-                            
+
                         </td>
                     </tr>
                 @endforeach
@@ -49,10 +50,11 @@
                     <th class="text-center fw-bold gradientColor fs-4">Slug</th>
                     <th class="text-center fw-bold gradientColor fs-4">Created at</th>
                     <th class="text-center fw-bold gradientColor fs-4">Updated at</th>
-                    <th class="text-center fw-bold gradientColor fs-4"><a class="f-d-button" href="{{ route('admin.types.create') }}"><i class="fa-solid fa-plus"></i></th></a>
-                    
+                    <th class="text-center fw-bold gradientColor fs-4"><a class="f-d-button"
+                            href="{{ route('admin.types.create') }}"><i class="fa-solid fa-plus"></i></th></a>
+
                 </tr>
-                
+
             </table>
         </div>
     </div>
@@ -85,9 +87,9 @@
         <p class="green fs-4 fw-bold">
             Data
         </p>
-        <a href="#" class="d-flex justify-content-start align-items-center">
+        <a href="{{ route('admin.types.index') }}" class="d-flex justify-content-start align-items-center">
             <i class="fs-5 fa-solid fa-book"></i>
-            Documentation
+            Types
         </a>
         <a href="#" class="d-flex justify-content-start align-items-center">
             <i class="fs-5 fa-solid fa-chart-line"></i>
