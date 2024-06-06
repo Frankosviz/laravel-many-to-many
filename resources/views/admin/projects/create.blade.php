@@ -14,7 +14,8 @@
         </div>
     @endif
 </div>
-<form class="h-100" action="{{ route('admin.projects.store', $project->slug) }}" method="POST" enctype="multipart/form-data">
+<form class="h-100" action="{{ route('admin.projects.store', $project->slug) }}" method="POST"
+    enctype="multipart/form-data">
     @csrf
     <div class="f-d-editform-container f-d-transparent-layer-edit">
         @error('title', 'description', 'image_path', 'repository_url', 'url', 'technologies_used', 'start_date', 'end_date', 'status')
@@ -32,8 +33,9 @@
             <img src="/images/placeholder.webp" width="100" id="uploadPreview">
             <label for="image_path" class="form-label lightbrown fw-bold">Image </label>
             <div class="input-group">
-                <input type="file" accept="image/*" class="form-control f-d-bg-form @error('image_path') is-invalid @enderror"
-                    name="image_path" id="upload_image" aria-describedby="basic-addon3 basic-addon4">
+                <input type="file" accept="image/*"
+                    class="form-control f-d-bg-form @error('image_path') is-invalid @enderror" name="image_path"
+                    id="upload_image" aria-describedby="basic-addon3 basic-addon4">
             </div>
         </div>
 
@@ -50,14 +52,19 @@
             <textarea name="description" id="" cols="30" rows="10"
                 class="form-control f-d-bg-form @error('description') description.min|max @enderror"></textarea>
         </div>
-        <!-- <div class="mb-3">
-            <label for="technologies_used" class="form-label lightbrown fw-bold">Technologies</label>
+        <div class="mb-3">
+            <label for="technologies_used" class="form-label lightbrown fw-bold">Types</label>
             <div class="input-group">
-                <input type="text"
-                    class="form-control f-d-bg-form @error('technologies_used') technologies_used.max @enderror"
-                    name="technologies_used" aria-describedby="basic-addon3 basic-addon4">
+                <select name="type_id" id="type_id"
+                    class="form-select f-d-bg-form @error('type_id') type_id.required @enderror">
+                    @foreach ($types as $type)
+                        <option class="f-d-bg-form" value="{{ $type->id }}"
+                            {{ $type->id == old('type_id') ? 'selected' : '' }}> 
+                            {{ $type->name }} </option>
+                    @endforeach
+                </select>
             </div>
-        </div> -->
+        </div>
         <div class="mb-3">
             <label for="start_date" class="form-label lightbrown fw-bold">Start Date</label>
             <div class="input-group">

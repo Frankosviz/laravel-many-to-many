@@ -28,12 +28,14 @@
         <p class="green fw-bold">
             {{ $project->description }}
         </p>
-        <!-- <p class="lightbrown fs-4 fw-bold">
-            Used Technologies
+        <p class="lightbrown fs-4 fw-bold">
+            Type of the project
         </p>
+        @if ($project->type)
         <p class="green fw-bold">
-            {{ $project->technologies_used }}
-        </p> -->
+            {{ $project->type->name }}
+        </p>
+        @endif
         <p class="lightbrown fs-4 fw-bold">
             Url of the project
         </p>

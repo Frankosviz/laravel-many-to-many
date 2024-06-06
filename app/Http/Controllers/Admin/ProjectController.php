@@ -9,6 +9,9 @@ use App\Http\Requests\UpdateProjectRequest;
 use App\Http\Requests\StoreProjectRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Type;
+use App\Models\Technology;
+use Auth;
 
 class ProjectController extends Controller
 {
@@ -26,7 +29,9 @@ class ProjectController extends Controller
      */
     public function create(Project $project)
     {
-        return view('admin.projects.create', compact('project'));
+        $types = Type::all();
+        $technologies = Technology::all();
+        return view('admin.projects.create', compact('project', 'types', 'technologies'));
     }
 
     /**
@@ -36,6 +41,7 @@ class ProjectController extends Controller
     {
         $form_data = $request->validated();
         $form_data['slug'] = Project::generateSlug($form_data['title']);
+        $form_data['user_id'] = Auth::id();
 
         if ($request->hasFile('image_path')){
             // $img_path = $request->file('image_path')->storeAs(
@@ -72,7 +78,9 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $types = Type::all();
+        $technologies = Technology::all();
+        return view('admin.projects.edit', compact('project', 'types', 'technologies'));
     }
 
     /**
