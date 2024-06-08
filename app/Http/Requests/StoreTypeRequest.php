@@ -24,6 +24,8 @@ class StoreTypeRequest extends FormRequest
         return [
             'name' => 'required|max:200',
             'slug' => 'required|max:255',
+            'image_path' => 'nullable',
+            'description' => 'nullable|max:255',
         ];
     }
 
@@ -31,6 +33,9 @@ class StoreTypeRequest extends FormRequest
         return [
             'name.required' => 'This name is required bro!',
             'name.max' => 'Mate.. The name can not be longer than 255 characters',
+            'slug.required' => 'This slug is required brother!',
+            'slug.max' => 'Mate.. The slug can not be longer than 255 characters',
+            'description.max' => 'Mate.. The description can not be longer than 255 characters',
         ];
     }
 }

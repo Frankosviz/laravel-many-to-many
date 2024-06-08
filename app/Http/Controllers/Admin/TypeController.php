@@ -36,7 +36,7 @@ class TypeController extends Controller
         $form_data['slug'] = Type::generateSlug($form_data['name']);
 
         $new_type = Type::create($form_data);
-        return redirect()->route('admin.types.dashboard', $new_type->slug)->with('success', 'Type created successfully');
+        return redirect()->route('admin.dashboard', $new_type->slug)->with('success', 'Type created successfully');
     }
 
     /**
@@ -44,8 +44,8 @@ class TypeController extends Controller
      */
     public function show($slug)
     {
-        $type = Type::where('slug', $slug)->first();
-        return view('admin.types.show', compact('type'));
+        $types = Type::where('slug', $slug)->first();
+        return view('admin.types.show', compact('types'));
     }
 
     /**

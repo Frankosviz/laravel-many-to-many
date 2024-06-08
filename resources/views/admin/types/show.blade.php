@@ -1,16 +1,16 @@
 @extends('layouts.admin')
 @section('title')
-<h1 class="green text-uppercase"><strong class="gradientColor">{{ $type->name }}</strong></h1>
+<h1 class="green text-uppercase"><strong class="gradientColor">{{ $types->name }}</strong></h1>
 @endsection
 @section('content')
 <table class="f-d-table">
     <tr>
-        <th class="text-center fw-bold gradientColor fs-4">Type of Project</th>
-        <th class="text-center fw-bold gradientColor fs-4">Used technologies</th>
+        <th class="text-center fw-bold gradientColor fs-4">{{ $types->name }} projects</th>
     </tr>
     <tr>
-        <td class="green">{{ $type->name }}</td>
-        <!-- <td class="green">{{ $project->technologies }}</td> -->
+        @foreach ($types->projects as $project)
+            <td><a class="text-decoration-none green" href="{{ route('admin.projects.show', $project) }}">{{ $project->title }}</a></td>
+        @endforeach
     </tr>
 </table>
 <div class="d-flex justify-content-between">
@@ -69,17 +69,7 @@
         </p>
     </div>
 </div>
-<!-- <div class="w-100 f-d-transparent-layer">
-    <p class="lightbrown fs-4 fw-bold">
-        Related Projects
-    </p>
-</div>
-<div class="w-100 f-d-transparent-layer d-flex gap-4 align-items-center">
-        <div class="d-flex">
-            <a href="{{ route('admin.projects.show', $project->slug) }}"><img class="f-d-img-small"
-                    src="{{ $project->image_path }}" alt="imgfirst"></a>
-        </div>
-</div>  -->
+
 @endsection
 
 @section('sidebarContent')

@@ -21,6 +21,7 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
+        
         return view('admin.projects.index', compact('projects'));
     }
 
@@ -68,7 +69,7 @@ class ProjectController extends Controller
         // Possibile soluzione passando lo $slug alla funzione show
         $project = Project::where('slug', $slug)->first();
         // dd($project);
-
+        
         return view('admin.projects.show', compact('project'));
 
     }
