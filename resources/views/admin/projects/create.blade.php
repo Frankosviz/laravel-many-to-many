@@ -66,6 +66,14 @@
             </div>
         </div>
         <div class="mb-3">
+            <p class="lightbrown fw-bold">Select the technologies</p>
+            @foreach ($technologies as $technology)
+            <input type="checkbox" name="technologies[]" value="{{ $technology->id }}" id="technologies" class="form-check-input bg-black {{ in_array('technologies', old('technologies', [])) ? 'checked' : '' }}">
+            <label for="" class="form-label lightbrown fw-bold">{{ $technology->name }}</label>
+            @endforeach
+            
+        </div>
+        <div class="mb-3">
             <label for="start_date" class="form-label lightbrown fw-bold">Start Date</label>
             <div class="input-group">
                 <input type="date" class="form-control f-d-bg-form @error('start_date') is-invalid @enderror"

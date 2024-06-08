@@ -37,6 +37,12 @@
         </p>
         @endif
         <p class="lightbrown fs-4 fw-bold">
+            Used Technologies
+        </p>
+        <p class="green fw-bold">
+            {{ $project->technologies }}
+        </p>
+        <p class="lightbrown fs-4 fw-bold">
             Url of the project
         </p>
         <div class="d-flex bd-highlight mb-3">

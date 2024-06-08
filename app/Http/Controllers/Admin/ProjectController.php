@@ -21,8 +21,9 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
-        
-        return view('admin.projects.index', compact('projects'));
+        $technologies = Technology::all();
+
+        return view('admin.projects.index', compact('projects', 'technologies'));
     }
 
     /**
@@ -54,7 +55,6 @@ class ProjectController extends Controller
             $form_data['image_path'] = $img_path;
         }
         //dd($img_path);
-        
 
 
         $new_project = Project::create($form_data);
