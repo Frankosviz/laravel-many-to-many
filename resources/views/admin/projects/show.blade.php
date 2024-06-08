@@ -3,23 +3,7 @@
 <h1 class="green text-uppercase"><strong class="gradientColor">{{ $project->title }}</strong></h1>
 @endsection
 @section('content')
-<table class="f-d-table">
-    <tr>
-        <th class="text-center fw-bold gradientColor fs-4">Repo-Url</th>
-        <th class="text-center fw-bold gradientColor fs-4">Technologies</th>
-        <th class="text-center fw-bold gradientColor fs-4">Started at</th>
-        <th class="text-center fw-bold gradientColor fs-4">Ended at</th>
-        <th class="text-center fw-bold gradientColor fs-4">Status</th>
 
-    </tr>
-    <tr>
-        <td class="green">{{ $project->repository_url }}</td>
-        <td class="green">{{ $project->technologies }}</td>
-        <td class="green">{{ $project->start_date }}</td>
-        <td class="green">{{ $project->end_date }}</td>
-        <td class="green">{{ $project->status }}</td>
-    </tr>
-</table>
 <div class="d-flex justify-content-between">
     <div class="f-d-main-first-container f-d-transparent-layer">
         <p class="lightbrown fs-4 fw-bold">
@@ -40,7 +24,7 @@
             Used Technologies
         </p>
         <p class="green fw-bold">
-            {{ $project->technologies }}
+            {{ $project->technologies->pluck('name')->implode(', ') }}
         </p>
         <p class="lightbrown fs-4 fw-bold">
             Url of the project
@@ -65,9 +49,7 @@
                         <i class="fa-solid fa-trash"></i>
                     </button>
                 </form>
-
             </div>
-
         </div>
     </div>
     <div class="f-d-main-second-container f-d-transparent-layer">
@@ -82,17 +64,6 @@
         </p>
     </div>
 </div>
-<!-- <div class="w-100 f-d-transparent-layer">
-    <p class="lightbrown fs-4 fw-bold">
-        Related Projects
-    </p>
-</div>
-<div class="w-100 f-d-transparent-layer d-flex gap-4 align-items-center">
-        <div class="d-flex">
-            <a href="{{ route('admin.projects.show', $project->slug) }}"><img class="f-d-img-small"
-                    src="{{ $project->image_path }}" alt="imgfirst"></a>
-        </div>
-</div>  -->
 @endsection
 
 @section('sidebarContent')

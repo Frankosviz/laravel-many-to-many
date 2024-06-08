@@ -56,8 +56,12 @@ class ProjectController extends Controller
         }
         //dd($img_path);
 
-
+        
+        
         $new_project = Project::create($form_data);
+        if ($request->has('technologies')) {
+            $new_project->technologies()->attach($request->technologies);
+        }
         return redirect()->route('admin.dashboard', $new_project->slug)->with('success', 'Project created successfully');
     }
 
