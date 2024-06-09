@@ -341,6 +341,26 @@ td:first-child {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
+.f-d-button-form-cancel-modal {
+    background-color: #1C2226;
+    border: none;
+    color: $green;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    text-align: center;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
 .f-d-button-form {
     background-color: $green;
     border: none;

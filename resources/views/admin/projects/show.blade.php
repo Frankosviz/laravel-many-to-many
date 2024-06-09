@@ -45,7 +45,7 @@
                 <form action="{{ route('admin.projects.destroy', $project) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="f-d-button">
+                    <button type="submit" class="f-d-button" id="delete-button">
                         <i class="fa-solid fa-trash"></i>
                     </button>
                 </form>
@@ -65,6 +65,7 @@
     </div>
 </div>
 @endsection
+@include('partials.modal')
 
 @section('sidebarContent')
 @include('partials.sidebar');

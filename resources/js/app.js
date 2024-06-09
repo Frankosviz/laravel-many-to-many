@@ -36,3 +36,15 @@ if (image) {
         }
     });
 }
+
+const deleteButton = document.getElementById('delete-button');
+deleteButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    const modale = document.getElementById('exampleModal');
+    const myModal = new bootstrap.Modal(modale);
+    myModal.show();
+    const btnSave = modale.querySelector(".btn.f-d-button-form-cancel-modal");
+    btnSave.addEventListener("click", () => {
+        deleteButton.parentElement.submit();
+    });
+})
