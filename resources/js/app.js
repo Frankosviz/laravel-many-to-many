@@ -47,4 +47,18 @@ deleteButton.addEventListener('click', (e) => {
     btnSave.addEventListener("click", () => {
         deleteButton.parentElement.submit();
     });
-})
+
+    
+});
+// const clickTypesProject = document.getElementById('clickTypesProject');
+// clickTypesProject.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     const modaleTypes = document.getElementById('show-types');
+//     modaleTypes = new bootstrap.Modal(modaleTypes);
+//     modaleTypes.show();
+//     console.log('clickTypesProject');
+// });
+
+
+
+    

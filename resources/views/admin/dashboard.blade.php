@@ -23,10 +23,10 @@
                 </tr>
                 @foreach ($projects as $project)
                     <tr>
-                        <td class="green">{{ $project->title }}</td>
-                        <td class="green">{{ $project->repository_url }}</td>
-                        <td class="green">{{ $project->status }}</td>
-                        <td class="green">{{ $project->start_date }}</td>
+                        <td><a class="green text-decoration-none" href="{{ route('admin.projects.show', $project) }}">{{ $project->title }}</a></td>
+                        <td><a class="green text-decoration-none" href="{{ route('admin.projects.show', $project) }}">{{ $project->repository_url }}</a></td>
+                        <td><a class="green text-decoration-none" href="{{ route('admin.projects.show', $project) }}">{{ $project->status }}</a></td>
+                        <td><a class="green text-decoration-none" href="{{ route('admin.projects.show', $project) }}">{{ $project->start_date }}</a></td>
                         <td class="d-flex align-items-center">
                             <a href="{{ route('admin.projects.show', $project) }}" class="f-d-button">
                                 <i class="fa-solid fa-eye">

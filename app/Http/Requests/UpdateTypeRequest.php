@@ -22,6 +22,7 @@ class UpdateTypeRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'project_id' => 'required|exists:types,id',
             'name' => 'required|max:200',
             'slug' => 'max:255',
             'description' => 'nullable|max:255',

@@ -65,7 +65,7 @@
     </div>
 </div>
 @endsection
-@include('partials.modal')
+@include('partials.deleteModal')
 
 @section('sidebarContent')
 @include('partials.sidebar');

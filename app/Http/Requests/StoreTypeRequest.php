@@ -22,10 +22,12 @@ class StoreTypeRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'project_id' => 'nullable|exists:projects,id',
             'name' => 'required|max:200',
             'slug' => 'required|max:255',
             'image_path' => 'nullable',
             'description' => 'nullable|max:255',
+
         ];
     }
 
