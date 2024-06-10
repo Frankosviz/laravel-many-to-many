@@ -11,7 +11,7 @@ class Type extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'slug'];
+    protected $fillable = ['name', 'slug', 'project_id', 'description', 'image_path'];
 
     public function projects()
     {

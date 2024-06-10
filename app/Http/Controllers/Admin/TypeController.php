@@ -43,10 +43,9 @@ class TypeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($slug)
+    public function show(Type $type)
     {
-        $types = Type::where('slug', $slug)->first();
-        return view('admin.types.show', compact('types'));
+        return view('admin.types.show', compact('type'));
     }
 
     /**

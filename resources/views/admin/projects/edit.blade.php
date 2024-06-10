@@ -54,6 +54,15 @@
                 </select>
             </div>
         </div>
+
+        <div class="mb-3">
+            <p class="lightbrown fw-bold">Select the technologies</p>
+            @foreach ($technologies as $technology)
+            <input type="checkbox" name="technologies[]" value="{{ $technology->id }}" class="form-check-input bg-black {{ $project->technologies->contains($technology->id) ? 'checked' : '' }}">
+            <label for="" class="form-label lightbrown fw-bold">{{ $technology->name }}</label>
+            @endforeach
+        </div>
+
     <div class="mb-3">
         <label for="start_date" class="form-label lightbrown fw-bold">Start Date</label>
         <div class="input-group">
